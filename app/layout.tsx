@@ -1,11 +1,6 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import "./globals.css";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+import { NetflixFont } from "./fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Netflix Clone",
@@ -19,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${NetflixFont.className}`}>{children}</body>
     </html>
   );
 }
