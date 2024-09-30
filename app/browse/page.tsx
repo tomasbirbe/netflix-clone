@@ -1,4 +1,8 @@
-export default function Home() {
+import { MoviesController } from "../controllers/movies.controller";
+
+export default async function Home() {
+  const [recommendation, ...movies] = await MoviesController.getPopularMovies();
+
   return (
     <>
       <header>
@@ -20,6 +24,7 @@ export default function Home() {
             </ul>
           </div>
         </nav>
+        {recommendation.title}
       </header>
       <main>Hello, World!</main>
     </>
