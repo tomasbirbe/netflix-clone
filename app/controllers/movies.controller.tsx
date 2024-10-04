@@ -17,4 +17,12 @@ export const MoviesController = {
 
     return data.results as Array<Movie>;
   },
+
+  getPoster(posterPath: string) {
+    const url = process.env.API_POSTER_URL;
+
+    const posterUrl = `${url}/${posterPath}`;
+
+    return posterUrl;
+  },
 };
